@@ -1,0 +1,124 @@
+<html>
+<head>
+<title>Student Registeration Form</title>
+<link rel='stylesheet' href='style.css' type='text/css' />
+<script>
+
+$(document).ready(function (){
+    validate();
+    $('#First, #Second, #Third, #Fourth, #Fifth').change(validate);
+});
+
+function validate() {
+    
+
+
+    if (document.stud_form.name.value == "") {
+        alert("Enter a name");
+        document.stud_form.name.focus();
+        return false;
+    }
+    if (!/^[A-Za-z]+$/.test(document.stud_form.name.value)) {
+        alert("Invalid characters");
+        document.stud_form.name.focus();
+        return false;
+    }
+    if (document.stud_form.lastName.value == "") {
+        alert("Enter a Last Name");
+        document.stud_form.lastName.focus();
+        return false;
+    }
+    if (!/^[A-Za-z]+$/.test(document.stud_form.lastName.value)) {
+        alert("Invalid characters");
+        document.stud_form.lastName.focus();
+        return false;
+    }
+    if (document.stud_form.class.value == "") {
+        alert("Enter a proper Class");
+        document.stud_form.class.focus();
+        return false;
+    }
+    if (!/^[0-9a-zA-Z]+$/.test(document.stud_form.class.value)) {
+        alert("Invalid characters");
+        document.stud_form.class.focus();
+        return false;
+    }
+    if (!/^[0-9]+$/.test(document.stud_form.pass.value)) {
+        alert("Invalid characters");
+        document.stud_form.pass.focus();
+        return false;
+    }
+    if (document.stud_form.class.value == "") {
+        alert("Enter a proper Passing Year");
+        document.stud_form.pass.focus();
+        return false;
+    }
+    if (!/^[0-9]+$/.test(document.stud_form.marks.value)) {
+        alert("Invalid characters");
+        document.stud_form.marks.focus();
+        return false;
+    }
+    if (document.stud_form.marks.value == "") {
+        alert("Enter a proper Passing Year");
+        document.stud_form.marks.focus();
+        return false;
+    }
+    if ($('#First').val().length   >   0   &&
+        $('#Second').val().length  >   0   &&
+        $('#Third').val().length    >   0  &&
+        $('#Fourth').val().length    >   0  &&
+        $('#Fifth').val().length    >   0) {
+        $("#btnClick").prop("disabled", false);
+    }
+    else {
+        $("#btnClick").prop("disabled", true);
+    }
+}
+
+
+function validate(){
+    
+}
+</script>
+</head>
+<body>
+<center><h1>Student Admission Form</h1></center>
+<hr>
+<form method="post" action="" name="stud_form" onsubmit="return validate()">
+<table>
+<tr>
+<td><label> Name:</label></td>
+<td>
+<input type="text"  ID="First" name="name">
+</td>
+</tr>
+<tr>
+<td><label> Last Name:</label></td>
+<td>
+<input type="text"  ID="Second" name="lastName">
+</td>
+</tr>
+<tr>
+<td><label> Class:</label></td>
+<td>
+<input type="text" ID="Third" name="class">
+</td>
+</tr>
+<tr>
+<td><label> Year Of Passing:</label></td>
+<td>
+<input type="text" ID="Fourth" name="pass">
+</td>
+</tr>
+<tr>
+<td><label> Percentage of marks:</label></td>
+<td>
+<input type="text" ID="Fifth" name="marks">
+</td>
+</tr>
+<button type="submit" ID="btnClick" > Sumbit </button>
+</table>
+
+
+    </body>
+</html>
